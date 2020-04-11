@@ -1,29 +1,17 @@
-c-beam telemetry server [![Docker Hub x86](https://img.shields.io/docker/pulls/cbase/cbeam-telemetry-server.svg)](https://hub.docker.com/r/cbase/cbeam-telemetry-server/) [![Docker Hub Raspberry Pi3](https://img.shields.io/docker/pulls/cbase/raspberrypi3-cbeam-telemetry-server.svg)](https://hub.docker.com/r/cbase/raspberrypi3-cbeam-telemetry-server/) [![Build Status](https://travis-ci.org/c-base/cbeam-telemetry-server.svg?branch=master)](https://travis-ci.org/c-base/cbeam-telemetry-server) [![Greenkeeper badge](https://badges.greenkeeper.io/c-base/cbeam-telemetry-server.svg)](https://greenkeeper.io/)
-=======================
+# c-beam telemetry server
 
-This is a telemetry server for connecting the NASA [OpenMCT](https://nasa.github.io/openmct/) with information sources on [c-base's](https://c-base.org/) c-beam telemetry network. It is based on the OpenMCT [telemetry adapter tutorial](http://nasa.github.io/openmct/docs/tutorials/#telemetry-adapter).
+This is a fork of [cbeam-telemetry-server](https://github.com/c-base/cbeam-telemetry-server), a server for connecting the NASA [OpenMCT](https://nasa.github.io/openmct/) with MQTT information sources. 
 
-![Screenshot of OpenMCT with c-beam data](https://pbs.twimg.com/media/CotctAfXYAAKCh0.jpg)
+This fork uses a newer version of OpenMCT, which has a more refined UI. It also maps MQTT topics from the file `dict/dictionaries.json` and restarts the service when a file change is detected, allowing other services to modify the configuration.
+
+In addition, mosquitto (the MQTT broker) is now configured to allow connections over WebSockets on port 9091 (along with 1883 for normal connections) and anonymous users now have read-only access. The mosquitto configuration is stored in the `mosquitto/` directory.
 
 ## Installation
 
-* Install the dependencies with `npm install`
-* Build OpenMCT with `npm run build`
+I recommend using Docker, the following command will set-up the whole environment (might take awhile)
 
-## Running
+    docker-compose up --build -d
 
-* Start the service with `npm start`
+## Adding Data Sources
 
-If you want to change the MQTT broker address, set the `MSGFLO_BROKER` environment variable before starting the service.
-
-Read more in <https://bergie.iki.fi/blog/nasa-openmct-iot-dashboard/>.
-
-## Adding information sources
-
-c-beam topics are mapped to OpenMCT data in the installation's runner file in `config/`.
-
-## TODOs
-
-* Mapping more c-beam data
-* Custom displays combining different data points (like a green/red bar status UI)
-* UIs for station functionality
+See the file `dict/dictionaries.json` for how to configure the MQTT mappings. Alternatively see the files under `config/` if you don't want to use a json file. Then you need to change `OPENMCT_CONFIG` in the compose file.

@@ -1,27 +1,30 @@
 version: '2'
 services:
   mqtt:
-    image: ansi/mosquitto
-    container_name: cbeam-telemetry-server-mosquitto
+    image: eclipse-mosquitto
+    container_name: mosquitto
     ports:
-      - '127.0.0.1:1883:1883'
-    entrypoint: /usr/local/sbin/mosquitto
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./mosquitto:/mosquitto/config/
   influxdb:
     image: influxdb
     container_name: influxdb
     ports:
-      - '127.0.0.1:8086:8086'
+      - 8086:8086
   openmct:
-    image: cbase/cbeam-telemetry-server
     build: .
     container_name: cbeam-telemetry-server
     environment:
       MSGFLO_BROKER: 'mqtt://mqtt:1883'
       INFLUX_HOST: influxdb
-      OPENMCT_CONFIG: eva.js
+      OPENMCT_CONFIG: spark.js
     ports:
       - '127.0.0.1:8080:8080'
       - '127.0.0.1:8082:8082'
     links:
       - influxdb
       - mqtt
+    volumes:
+      - ./dict:/var/cbeam-telemetry-server/dict
