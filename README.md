@@ -10,7 +10,17 @@ In addition, mosquitto (the MQTT broker) is now configured to allow connections 
 
 I recommend using Docker, the following command will set-up the whole environment (might take awhile)
 
-    docker-compose up --build -d
+    sudo docker-compose up --build -d
+
+## Problems
+
+If you can't connect to OpenMCT on port 8080 then check the logs
+
+    sudo docker logs cbeam-telemetry-server
+
+You might see an error with connecting to InfluxDB (port 8086) or something about the dict file not being accessible. In both cases a restart should do the trick.
+
+    sudo docker restart cbeam-telemetry-server
 
 ## Adding Data Sources
 
