@@ -1,28 +1,18 @@
 {
-  "name": "cbeam-telemetry-server",
-  "version": "0.0.1",
-  "description": "OpenMCT Telemetry Server for c-beam",
+  "name": "mission-control-2023",
+  "version": "0.1.0",
+  "description": "OpenMCT Telemetry Server for HYPED",
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
-    "build": "cd node_modules/openmct && npm install && npm run prepare",
+    "build:openmct": "cd node_modules/openmct && yarn && yarn prepare",
     "start": "node config/eva.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/c-base/cbeam-telemetry-server.git"
+    "url": "git://github.com/Hyp-ed/mission-control-2023.git"
   },
-  "keywords": [
-    "openmct",
-    "cbase",
-    "mqtt"
-  ],
-  "author": "Henri Bergius <henri.bergius@iki.fi>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/c-base/cbeam-telemetry-server/issues"
-  },
-  "homepage": "https://bergie.iki.fi/blog/nasa-openmct-iot-dashboard/",
   "dependencies": {
     "coffeescript": "^2.3.1",
     "cors": "^2.8.4",
@@ -32,7 +22,7 @@
     "influx": "^5.0.7",
     "mqtt": "^2.3.0",
     "websocket": "^1.0.26",
-    "openmct": "git://github.com/nasa/openmct.git#vista-r4.3.1-rc1"
+    "openmct": "git+https://github.com/nasa/openmct.git#vista-r4.10.0-rc4"
   },
   "config": {
     "unsafe-perm": true

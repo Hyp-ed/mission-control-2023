@@ -9,13 +9,13 @@ services:
     volumes:
       - ./mosquitto:/mosquitto/config/
   influxdb:
-    image: influxdb
+    image: influxdb:1.8
     container_name: influxdb
     ports:
       - 8086:8086
   openmct:
     build: .
-    container_name: cbeam-telemetry-server
+    container_name: telemetry-server
     environment:
       MSGFLO_BROKER: 'mqtt://mqtt:1883'
       INFLUX_HOST: influxdb
@@ -27,4 +27,4 @@ services:
       - influxdb
       - mqtt
     volumes:
-      - ./dict:/var/cbeam-telemetry-server/dict
+      - ./dict:/var/app/dict

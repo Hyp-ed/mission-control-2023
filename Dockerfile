@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:16
 
 # Expose the HTTP port for OpenMCT
 EXPOSE 8080
@@ -8,17 +8,19 @@ EXPOSE 8082
 # Install inotify-tools. We use it in server.sh to restart the server on certain file changes
 RUN apt-get update && apt-get install -y inotify-tools
 
+RUN apt-get install -y git
+
 # Reduce npm install verbosity, overflows Travis CI log view
 ENV NPM_CONFIG_LOGLEVEL warn
 
-RUN mkdir -p /var/cbeam-telemetry-server
-WORKDIR /var/cbeam-telemetry-server
+RUN mkdir -p /var/app
+WORKDIR /var/app
 
-COPY . /var/cbeam-telemetry-server
+COPY . /var/app
 
 # Install dependencies and build the OpenMCT package
-RUN npm install
-RUN npm run build
+RUN yarn
+# RUN yarn build:openmct
 
 RUN cp -R node_modules/openmct/dist openmct
 
