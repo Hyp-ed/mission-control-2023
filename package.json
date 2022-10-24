@@ -14,14 +14,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "coffeescript": "^2.3.1",
-    "cors": "^2.8.4",
-    "debug": "^3.1.0",
-    "ejs": "^2.5.6",
-    "express": "^4.15.3",
-    "influx": "^5.0.7",
-    "mqtt": "^2.3.0",
-    "websocket": "^1.0.26",
+    "coffeescript": "^2.7.0",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "influx": "^5.9.3",
+    "mqtt": "^4.3.7",
+    "websocket": "^1.0.34",
     "openmct": "git+https://github.com/nasa/openmct.git#vista-r4.10.0-rc4"
   },
   "config": {
