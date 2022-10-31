@@ -1,24 +1,24 @@
 [
   {
     "name": "datalogger",
-    "objpath": "datalogger", 
+    "objpath": "datalogger",
     "measurements": [
       {
         "name": "shock_front_left",
         "objpath": "datalogger.shock_front_left",
         "options": {
-          "format": "float", 
+          "format": "float",
           "units": "volts"
-        }, 
+        },
         "topic": "ts/dat/shock/frontleft"
-      }, 
+      },
       {
         "name": "shock_front_right",
         "objpath": "datalogger.shock_front_right",
         "options": {
-          "format": "float", 
+          "format": "float",
           "units": "volts"
-        }, 
+        },
         "topic": "ts/dat/shock/frontright"
       }
     ]

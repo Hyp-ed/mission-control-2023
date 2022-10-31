@@ -1,6 +1,6 @@
 # c-beam telemetry server
 
-This is a fork of [cbeam-telemetry-server](https://github.com/Ingimarsson/cbeam-telemetry-server), a server for connecting the NASA [OpenMCT](https://nasa.github.io/openmct/) with MQTT information sources. 
+This is a fork of [cbeam-telemetry-server](https://github.com/Ingimarsson/cbeam-telemetry-server), a server for connecting the NASA [OpenMCT](https://nasa.github.io/openmct/) with MQTT information sources.
 
 This fork uses a newer version of OpenMCT, which has a more refined UI. It also maps MQTT topics from the file `dict/dictionaries.json` and restarts the service when a file change is detected, allowing other services to modify the configuration.
 

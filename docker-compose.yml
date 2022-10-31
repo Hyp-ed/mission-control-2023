@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
   mqtt:
     image: eclipse-mosquitto
@@ -17,12 +17,12 @@ services:
     build: .
     container_name: telemetry-server
     environment:
-      MSGFLO_BROKER: 'mqtt://mqtt:1883'
+      MSGFLO_BROKER: "mqtt://mqtt:1883"
       INFLUX_HOST: influxdb
       OPENMCT_CONFIG: spark.js
     ports:
-      - '127.0.0.1:8080:8080'
-      - '127.0.0.1:8082:8082'
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:8082:8082"
     links:
       - influxdb
       - mqtt
