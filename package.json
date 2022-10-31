@@ -6,7 +6,12 @@
   "scripts": {
     "test": "grunt test",
     "build:openmct": "cd node_modules/openmct && yarn && yarn prepare",
-    "start": "node config/eva.js"
+    "start": "node config/eva.js",
+    "Lint": "==========================================================================================================",
+    "lint:base": "eslint --cache 'src/**/*.{js,ts,tsx}'",
+    "pretty:base": "prettier src/",
+    "fix": "yarn pretty:base --write && yarn lint:base --fix",
+    "flightcheck": "yarn pretty:base --check && yarn lint:base"
   },
   "repository": {
     "type": "git",
@@ -22,6 +27,15 @@
     "mqtt": "^4.3.7",
     "websocket": "^1.0.34",
     "openmct": "git+https://github.com/nasa/openmct.git#vista-r4.10.0-rc4"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "prettier": "^2.7.1"
   },
   "config": {
     "unsafe-perm": true
