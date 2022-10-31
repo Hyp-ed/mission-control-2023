@@ -14,7 +14,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "coffeescript": "^2.7.0",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
     "ejs": "^3.1.8",
