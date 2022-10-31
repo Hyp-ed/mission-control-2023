@@ -8,8 +8,8 @@
     "build:openmct": "cd node_modules/openmct && yarn && yarn prepare",
     "start": "node config/eva.js",
     "Lint": "==========================================================================================================",
-    "lint:base": "eslint --cache 'src/**/*.{js,ts,tsx}'",
-    "pretty:base": "prettier src/",
+    "lint:base": "eslint --cache '**/*.{js,ts,tsx}'",
+    "pretty:base": "prettier .",
     "fix": "yarn pretty:base --write && yarn lint:base --fix",
     "flightcheck": "yarn pretty:base --check && yarn lint:base"
   },

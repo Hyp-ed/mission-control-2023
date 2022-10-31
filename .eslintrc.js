@@ -3,11 +3,7 @@ module.exports = {
     node: true,
     es2021: true,
   },
-  extends: [
-    "airbnb-base",
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["airbnb-base", "eslint:recommended", "plugin:prettier/recommended"],
   plugins: ["import", "simple-import-sort"],
   ignorePatterns: ["/dist", "/node_modules", " .eslintrc.js"],
   // settings: {
@@ -34,7 +30,7 @@ module.exports = {
           ["^\\u0000"],
           // Packages.
           // Things that start with a letter (or digit or underscore), or `@` | `.` followed by a letter (excluding src/)
-          ["^(@|.)?(?!src)\\w",],
+          ["^(@|.)?(?!src)\\w"],
           // Absolute imports and other imports such as Vue-style `@/foo`.
           // Anything not matched in another group.
           ["^"],
