@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 function getDictionary(name) {
   return http.get(`/dictionary/${name}.json`).then(function (result) {
     return result.data;

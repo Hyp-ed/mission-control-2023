@@ -1,6 +1,5 @@
-/**
- * Basic Realtime telemetry plugin using websockets.
- */
+// @ts-nocheck
+
 function RealtimeTelemetryPlugin(namespaces) {
   return function (openmct) {
     const socket = new WebSocket(`ws://${window.location.hostname}:8082`);

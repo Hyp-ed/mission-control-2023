@@ -1,6 +1,4 @@
-/**
- * Basic historical telemetry plugin.
- */
+// @ts-nocheck
 
 function HistoricalTelemetryPlugin(namespaces) {
   return function install(openmct) {
