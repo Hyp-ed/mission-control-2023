@@ -21,6 +21,8 @@
 
   ws = require("websocket");
 
+  const path = require("path");
+
   Server = function () {
     class Server {
       constructor(config1) {
@@ -39,8 +41,9 @@
         }
         this.history = new history(this.config);
         this.app = express();
-        this.app.use(express.static("assets"));
+        this.app.use(express.static(path.join(__dirname, "../assets")));
         this.app.use(`/${this.config.openmctRoot}`, express.static(this.config.openmctRoot));
+        this.app.set("views", path.join(__dirname, "../views"));
         this.app.set("view engine", "ejs");
         this.app.get("/", (req, res) => {
           return res.render("index", this.config);
