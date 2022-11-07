@@ -1,3 +1,15 @@
 {
-  "extends": "@tsconfig/node16-strictest-esm/tsconfig.json"
+  "extends": "@tsconfig/node16-strictest-esm/tsconfig.json",
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "allowJs": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "resolveJsonModule": true,
+
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noPropertyAccessFromIndexSignature": false
+  }
 }
