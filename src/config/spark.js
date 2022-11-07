@@ -1,6 +1,6 @@
 const app = require("../server/app");
 
-const dictionaries = require("../dict/dictionaries.json");
+const dictionaries = require("../../dict/dictionaries.json");
 
 const dicts = [];
 
