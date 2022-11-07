@@ -4,12 +4,13 @@
   "description": "OpenMCT Telemetry Server for HYPED",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test",
-    "build:openmct": "cd node_modules/openmct && yarn && yarn prepare",
+    "Run": "===========================================================================================================",
     "start": "node config/eva.js",
+    "Build": "=========================================================================================================",
+    "build:openmct": "cd node_modules/openmct && yarn && yarn prepare",
     "Lint": "==========================================================================================================",
-    "lint:base": "eslint --cache '**/*.{js,ts,tsx}'",
-    "pretty:base": "prettier .",
+    "lint:base": "eslint --cache 'src/**/*.{js,ts,tsx}'",
+    "pretty:base": "prettier src/",
     "fix": "yarn pretty:base --write && yarn lint:base --fix",
     "flightcheck": "yarn pretty:base --check && yarn lint:base"
   },
@@ -25,8 +26,8 @@
     "express": "^4.18.2",
     "influx": "^5.9.3",
     "mqtt": "^4.3.7",
-    "websocket": "^1.0.34",
-    "openmct": "git+https://github.com/nasa/openmct.git#vista-r4.10.0-rc4"
+    "openmct": "git+https://github.com/nasa/openmct.git#vista-r4.10.0-rc4",
+    "websocket": "^1.0.34"
   },
   "devDependencies": {
     "eslint": "^8.26.0",
