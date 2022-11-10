@@ -1,7 +1,15 @@
 [{
-  "name": "temperature.1",
-  "min": 5,
-  "max": 10,
+  "name": "temperature",
+  "min": 0,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 2000
+},
+{
+  "name": "accelerometer",
+  "min": 50,
+  "max": 200,
   "variance": 2,
   "update_interval": 1000
 }]
+

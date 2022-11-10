@@ -8,12 +8,12 @@ client.on("connect", function () {
 
   SENSORS.forEach(sensor => {
     setInterval(() => {
-      const temperature = generateRandomTemperature();
-      client.publish(sensor.topic, temperature);
-      console.log(`Published ${temperature} to ${sensor.topic}`);
-    }, 1000);
+      const temperature = generateRandomTemperature(sensor.min,sensor.max);
+      client.publish(`hyped.${sensor.name}`, temperature);
+      console.log(`Published ${temperature} to ${sensor.name}`);
+    }, sensor.update_interval);
   });
-  client.publish("hyped.temperature", generateRandomTemperature());
+  //client.publish("hyped.temperature", generateRandomTemperature());
 });
 
 // client.on("message", function (topic, message) {
@@ -21,7 +21,7 @@ client.on("connect", function () {
 //   client.end();
 // });
 
-let generateRandomTemperature = function () {
-  let randomTemperature = Math.round(random.float((min = 0), (max = 100)));
+let generateRandomTemperature = function (x,y) {
+  let randomTemperature = Math.round(random.float((min = x), (max = y)));
   return String(randomTemperature);
 };
