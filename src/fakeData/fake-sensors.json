@@ -1,0 +1,7 @@
+[{
+  "name": "temperature.1",
+  "min": 5,
+  "max": 10,
+  "variance": 2,
+  "update_interval": 1000
+}]
