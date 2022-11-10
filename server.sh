@@ -3,7 +3,7 @@ CONFIGFILE=${OPENMCT_CONFIG:=eva.js}
 OPENMCT_ROOT=${OPENMCT_ROOT:=node_modules/openmct/dist}
 DICT=dict/dictionaries.json
 
-node src/config/${OPENMCT_CONFIG}
+node dist/config/${OPENMCT_CONFIG}
 
 # while true; do
 #   node config/${OPENMCT_CONFIG} &
