@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* eslint-disable */
 
 function RealtimeTelemetryPlugin(namespaces) {
   return function (openmct) {

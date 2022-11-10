@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* eslint-disable */
 
 function getDictionary(name) {
   return http.get(`/dictionary/${name}.json`).then(function (result) {

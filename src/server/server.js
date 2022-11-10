@@ -1,4 +1,6 @@
 // @ts-nocheck
+/* eslint-disable */
+
 (function () {
   let Server;
   let cbeam;
