@@ -7,6 +7,7 @@
     "Run": "===========================================================================================================",
     "start": "node config/eva.js",
     "Build": "=========================================================================================================",
+    "build": "tsc",
     "build:openmct": "cd node_modules/openmct && yarn && yarn prepare",
     "Lint": "==========================================================================================================",
     "lint:base": "eslint --cache 'src/**/*.{js,ts,tsx}'",
@@ -30,13 +31,15 @@
     "websocket": "^1.0.34"
   },
   "devDependencies": {
+    "@tsconfig/node16-strictest-esm": "^1.0.3",
     "eslint": "^8.26.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^8.0.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
   },
   "config": {
     "unsafe-perm": true
