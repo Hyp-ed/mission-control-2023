@@ -1,4 +1,6 @@
 // @ts-nocheck
+/* eslint-disable */
+
 const app = require("../server/app");
 
 const dictionaries = require("../assets/dictionaries.json");

@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* eslint-disable */
 
 function HistoricalTelemetryPlugin(namespaces) {
   return function install(openmct) {

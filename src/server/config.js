@@ -1,4 +1,6 @@
 // @ts-nocheck
+/* eslint-disable */
+
 (function () {
   module.exports = {
     host: process.env.HOST || "localhost",
