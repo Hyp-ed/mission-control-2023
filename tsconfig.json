@@ -6,7 +6,7 @@
     "outDir": "dist",
     "rootDir": "src",
     "resolveJsonModule": true,
-
+    // TODO Later: remove when all errors fixed
     "noImplicitAny": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,

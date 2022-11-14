@@ -1,6 +1,7 @@
-import dictionaries from "../assets/dictionaries.json";
-import { logger } from "../core/logger";
-import { Dictionary, Server } from "../server/app";
+import dictionaries from "./assets/dictionaries.json";
+import { logger } from "./core/logger";
+import { default as Dictionary } from "./server/dictionary";
+import { default as Server } from "./server/server";
 
 const dicts = [];
 

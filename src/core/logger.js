@@ -1,4 +1,4 @@
-import path, { dirname } from "path";
+import path from "path";
 import { createLogger, format, transports } from "winston";
 
 // Same level as src
