@@ -1,7 +1,2 @@
-// @ts-nocheck
-/* eslint-disable */
-
-module.exports = {
-  Dictionary: require("./dictionary"),
-  Server: require("./server"),
-};
+export { default as Dictionary } from "./dictionary";
+export { default as Server } from "./server";

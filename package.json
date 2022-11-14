@@ -28,7 +28,8 @@
     "influx": "^5.9.3",
     "mqtt": "^4.3.7",
     "openmct": "git+https://github.com/nasa/openmct.git#vista-r4.10.0-rc4",
-    "websocket": "^1.0.34"
+    "websocket": "^1.0.34",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "@tsconfig/node16-strictest-esm": "^1.0.3",

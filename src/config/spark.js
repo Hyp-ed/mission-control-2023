@@ -1,16 +1,13 @@
-// @ts-nocheck
-/* eslint-disable */
-
-const app = require("../server/app");
-
-const dictionaries = require("../assets/dictionaries.json");
+import dictionaries from "../assets/dictionaries.json";
+import { logger } from "../core/logger";
+import { Dictionary, Server } from "../server/app";
 
 const dicts = [];
 
 // Read dictionaries.json into Dictionary objects
-dictionaries.forEach(function (dictionary) {
-  const dict = new app.Dictionary(dictionary.name, dictionary.objpath);
-  dictionary.measurements.forEach(function (measurement) {
+dictionaries.forEach((dictionary) => {
+  const dict = new Dictionary(dictionary.name, dictionary.objpath);
+  dictionary.measurements.forEach((measurement) => {
     try {
       dict.addMeasurement(measurement.name, measurement.objpath, [measurement.options], {
         topic: measurement.topic,
@@ -21,7 +18,7 @@ dictionaries.forEach(function (dictionary) {
 });
 
 // Start the server
-const server = new app.Server({
+const server = new Server({
   host: process.env.HOST || "localhost",
   port: process.env.PORT || 8080,
   wss_port: process.env.WSS_PORT || 8082,
@@ -33,10 +30,11 @@ const server = new app.Server({
   },
   persistence: "openmct.plugins.LocalStorage()",
 });
-server.start(function (err) {
+
+server.start((err) => {
   if (err) {
-    console.error(err);
+    logger.error("Server failed to start", err);
     process.exit(1);
   }
-  console.log(`Server listening in ${server.config.port}`);
+  logger.info(`Server listening on ${server.config.port}`);
 });
