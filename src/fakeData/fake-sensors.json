@@ -1,15 +1,81 @@
-[{
-  "name": "temperature",
+
+[{ 
+  "name": "Temperature",
   "min": 0,
   "max": 200,
   "variance": 2,
   "update_interval": 2000
 },
 {
-  "name": "accelerometer",
+  "name": "Accelerometer", 
   "min": 50,
   "max": 200,
   "variance": 2,
   "update_interval": 1000
-}]
+}, 
+{
+  "name": "Wheel Encoder",
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000
+},
+{
+  "name": "Keyence", 
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000
+},
+{
+  "name": "Gyroscope", 
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000
+},
+{
+  "name": "Feedback brake",
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000
+},
+{
+  "name": "Temperature Board",
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000
+},
+{
+  "name": "Hall effect (Motor)",
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000
+},
+{
+  "name": "Feedback cooling",
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000
+},
+{
+  "name": "Pressure",
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000
+},
+{
+  "name": "Analogue Pressure Sensor (Suspension)",
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000
+}
+
+]
 
