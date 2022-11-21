@@ -1,33 +1,18 @@
-import dictionaries from "./assets/dictionaries.json";
+import { CONFIG } from "./core/config";
+import { dicts } from "./core/dictionary";
 import { logger } from "./core/logger";
-import { default as Dictionary } from "./server/dictionary";
-import { default as Server } from "./server/server";
-
-const dicts = [];
-
-// Read dictionaries.json into Dictionary objects
-dictionaries.forEach((dictionary) => {
-  const dict = new Dictionary(dictionary.name, dictionary.objpath);
-  dictionary.measurements.forEach((measurement) => {
-    try {
-      dict.addMeasurement(measurement.name, measurement.objpath, [measurement.options], {
-        topic: measurement.topic,
-      });
-    } catch (e) {}
-  });
-  dicts.push(dict);
-});
+import Server from "./server/server";
 
 // Start the server
 const server = new Server({
-  host: process.env.HOST || "localhost",
-  port: process.env.PORT || 8080,
-  wss_port: process.env.WSS_PORT || 8082,
-  broker: process.env.MSGFLO_BROKER || "mqtt://c-beam.cbrp3.c-base.org",
+  host: CONFIG.host,
+  port: CONFIG.port,
+  wss_port: CONFIG.wssPort,
+  broker: CONFIG.mqttBroker,
   dictionaries: dicts,
   history: {
-    host: process.env.INFLUX_HOST || "localhost",
-    db: process.env.INFLUX_DB || "cbeam",
+    host: CONFIG.history.host,
+    db: CONFIG.history.db,
   },
   persistence: "openmct.plugins.LocalStorage()",
 });

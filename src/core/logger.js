@@ -1,10 +1,12 @@
 import path from "path";
 import { createLogger, format, transports } from "winston";
 
+import { CONFIG } from "./config";
+
 // Same level as src
 const LOGGING_DIRECTORY = path.join(__dirname, "..", "..", "logs");
 
-export const logger = createLogger({
+const logger = createLogger({
   level: "info",
   format: format.combine(
     format.timestamp({
@@ -25,13 +27,15 @@ export const logger = createLogger({
 // If we're not in production then **ALSO** log to the `console`
 // with the colorized simple format.
 //
-if (process.env.NODE_ENV !== "production") {
+if (CONFIG.env !== "production") {
   logger.add(
     new transports.Console({
       format: format.combine(format.colorize(), format.simple()),
     }),
   );
 }
+
+export { logger };
 
 // // **********************
 // // EXAMPLES OF HOW TO LOG

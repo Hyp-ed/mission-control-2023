@@ -20,7 +20,7 @@ COPY . /var/app
 
 # Install dependencies and build the OpenMCT package
 RUN yarn
-# RUN yarn build:openmct
+RUN yarn build
 
 RUN cp -R node_modules/openmct/dist openmct
 
