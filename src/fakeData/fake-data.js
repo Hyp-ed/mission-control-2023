@@ -9,10 +9,15 @@ client.on("connect", function () {
   SENSORS.forEach(sensor => {
     setInterval(() => {
       const temperature = generateRandomTemperature(sensor.min,sensor.max);
-      client.publish(`hyped.${sensor.name}`, temperature);
-      console.log(`Published ${temperature} to ${sensor.name}`);
+      if(sensor.name == 'brake feedback'){
+        client.publish(`hyped.${sensor.name}`, sensor.break_status);
+      } else {
+        client.publish(`hyped.${sensor.name}`, temperature);
+      }
+      console.log(`Published ${temperature} ${sensor.unit} to ${sensor.name}`);
     }, sensor.update_interval);
   });
+
   //client.publish("hyped.temperature", generateRandomTemperature());
 });
 
@@ -25,3 +30,4 @@ let generateRandomTemperature = function (x,y) {
   let randomTemperature = Math.round(random.float((min = x), (max = y)));
   return String(randomTemperature);
 };
+

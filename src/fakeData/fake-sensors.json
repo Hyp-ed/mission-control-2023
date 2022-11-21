@@ -1,81 +1,64 @@
 
 [{ 
-  "name": "Temperature",
+  "name": "temperature",
   "min": 0,
   "max": 200,
   "variance": 2,
-  "update_interval": 2000
+  "update_interval": 1000,
+  "unit": "°C"
 },
 {
-  "name": "Accelerometer", 
+  "name": "accelerometer", 
   "min": 50,
   "max": 200,
   "variance": 2,
-  "update_interval": 1000
+  "update_interval": 1000,
+  "unit": "m/s^2"
 }, 
 {
-  "name": "Wheel Encoder",
+  "name": "wheel_encoder",
   "min": 50,
   "max": 200,
   "variance": 2,
+  "update_interval": 1000,
+  "unit": "wheel rotations"
+},
+{
+  "name": "keyence", 
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000,
+  "unit": "poles crossed"
+},
+{
+  "name": "gyroscope", 
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000,
+  "unit": "°/s"
+},
+{
+  "name": "hall_effect",
+  "min": 50,
+  "max": 200,
+  "variance": 2,
+  "update_interval": 1000,
+  "unit": "teslas"
+},
+{
+  "name": "brake_feedback",
+  "break_status": true,
   "update_interval": 1000
 },
 {
-  "name": "Keyence", 
+  "name": "pressure",
   "min": 50,
   "max": 200,
   "variance": 2,
-  "update_interval": 1000
-},
-{
-  "name": "Gyroscope", 
-  "min": 50,
-  "max": 200,
-  "variance": 2,
-  "update_interval": 1000
-},
-{
-  "name": "Feedback brake",
-  "min": 50,
-  "max": 200,
-  "variance": 2,
-  "update_interval": 1000
-},
-{
-  "name": "Temperature Board",
-  "min": 50,
-  "max": 200,
-  "variance": 2,
-  "update_interval": 1000
-},
-{
-  "name": "Hall effect (Motor)",
-  "min": 50,
-  "max": 200,
-  "variance": 2,
-  "update_interval": 1000
-},
-{
-  "name": "Feedback cooling",
-  "min": 50,
-  "max": 200,
-  "variance": 2,
-  "update_interval": 1000
-},
-{
-  "name": "Pressure",
-  "min": 50,
-  "max": 200,
-  "variance": 2,
-  "update_interval": 1000
-},
-{
-  "name": "Analogue Pressure Sensor (Suspension)",
-  "min": 50,
-  "max": 200,
-  "variance": 2,
-  "update_interval": 1000
+  "update_interval": 1000,
+  "unit": "pascals"
 }
-
 ]
 
