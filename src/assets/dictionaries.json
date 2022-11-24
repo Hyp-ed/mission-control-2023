@@ -4,22 +4,22 @@
     "objpath": "datalogger",
     "measurements": [
       {
-        "name": "shock_front_left",
-        "objpath": "datalogger.shock_front_left",
+        "name": "temperature",
+        "objpath": "pod_1.temperature",
         "options": {
           "format": "float",
-          "units": "volts"
+          "units": "c"
         },
-        "topic": "ts/dat/shock/frontleft"
+        "topic": "hyped.temperature"
       },
       {
-        "name": "shock_front_right",
-        "objpath": "datalogger.shock_front_right",
+        "name": "keyence",
+        "objpath": "pod_1.keyence",
         "options": {
           "format": "float",
-          "units": "volts"
+          "units": "number of stripes"
         },
-        "topic": "ts/dat/shock/frontright"
+        "topic": "hyped.keyence"
       }
     ]
   }

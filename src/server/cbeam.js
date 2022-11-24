@@ -1,6 +1,8 @@
 // @ts-nocheck
 /* eslint-disable */
 
+const { logger } = require("../core/logger");
+
 (function () {
   let booleanStates;
   let main;
@@ -23,6 +25,7 @@
     booleanStates = {};
     client = mqtt.connect(config.broker);
     client.on("connect", function () {
+      logger.info('Connected to MQTT broker at "' + config.broker + '"');
       if (!callback) {
         return;
       }
@@ -30,6 +33,7 @@
       return (callback = null);
     });
     return client.on("error", function (err) {
+      logger.error('Error connecting to MQTT broker at "' + config.broker + '"', err);
       if (!callback) {
         return;
       }
