@@ -1,27 +1,30 @@
 
 [{ 
   "name": "temperature",
-  "min": 0,
-  "max": 200,
+  "min": 0.0,
+  "max": 200.0,
   "variance": 2,
   "update_interval": 1000,
-  "unit": "°C"
+  "unit": "°C",
+  "type": "float" 
 },
 {
   "name": "accelerometer", 
-  "min": 50,
-  "max": 200,
+  "min": 50.0,
+  "max": 200.0,
   "variance": 2,
   "update_interval": 1000,
-  "unit": "m/s^2"
+  "unit": "m/s^2",
+  "type": "float"
 }, 
 {
   "name": "wheel_encoder",
-  "min": 50,
-  "max": 200,
+  "min": 50.0,
+  "max": 200.0,
   "variance": 2,
   "update_interval": 1000,
-  "unit": "wheel rotations"
+  "unit": "wheel rotations",
+  "type": "float"
 },
 {
   "name": "keyence", 
@@ -29,36 +32,41 @@
   "max": 200,
   "variance": 2,
   "update_interval": 1000,
-  "unit": "poles crossed"
+  "unit": "poles crossed",
+  "type": "int"
 },
 {
   "name": "gyroscope", 
-  "min": 50,
-  "max": 200,
+  "min": 50.0,
+  "max": 200.0,
   "variance": 2,
   "update_interval": 1000,
-  "unit": "°/s"
+  "unit": "°/s",
+  "type": "float"
 },
 {
   "name": "hall_effect",
-  "min": 50,
-  "max": 200,
+  "min": 50.0,
+  "max": 200.0,
   "variance": 2,
   "update_interval": 1000,
-  "unit": "teslas"
+  "unit": "teslas",
+  "type": "float"
 },
 {
   "name": "brake_feedback",
   "break_status": true,
-  "update_interval": 1000
+  "update_interval": 1000,
+  "type": "bool"
 },
 {
   "name": "pressure",
-  "min": 50,
-  "max": 200,
+  "min": 50.0,
+  "max": 200.0,
   "variance": 2,
   "update_interval": 1000,
-  "unit": "pascals"
+  "unit": "pascals",
+  "type": "float"
 }
 ]
 
