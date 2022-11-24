@@ -5,7 +5,7 @@ export const CONFIG = {
   host: env.get("HOST").default("localhost").asString(),
   port: env.get("PORT").default(8080).asPortNumber(),
   wssPort: env.get("WSS_PORT").default(8082).asPortNumber(),
-  mqttBroker: env.get("MQTT_BROKER").default("mqtt://broker.emqx.io:8083").asString(),
+  mqttBroker: env.get("MQTT_BROKER").required().asString(),
   history: {
     host: env.get("INFLUX_HOST").default("localhost").asString(),
     db: env.get("INFLUX_DB").default("cbeam").asString(),
