@@ -6,6 +6,7 @@
   "scripts": {
     "Run": "===========================================================================================================",
     "start": "node config/eva.js",
+    "fake": "node dist/fake/fake-data.js",
     "Build": "=========================================================================================================",
     "build": "tsc && yarn build:copy-files",
     "build:copy-files": "cp -R ./src/views ./dist/views/",
@@ -30,6 +31,7 @@
     "influx": "^5.9.3",
     "mqtt": "^4.3.7",
     "openmct": "git+https://github.com/nasa/openmct.git#vista-r4.10.0-rc4",
+    "random": "^3.0.6",
     "websocket": "^1.0.34",
     "winston": "^3.8.2"
   },
