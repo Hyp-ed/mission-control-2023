@@ -4,7 +4,9 @@ import random from "random";
 
 const SENSORS = require("./fake-sensors.json");
 
-const client = mqtt.connect("ws://broker.emqx.io:8083/mqtt");
+const USE_PUBLIC_BROKER = false;
+
+const client = mqtt.connect(USE_PUBLIC_BROKER ? "ws://broker.emqx.io:8083/mqtt" : "ws://localhost:9001");
 
 function generateValueForSensor(sensor) {
   if (sensor.type === "boolean") {
@@ -37,8 +39,13 @@ client.on("connect", () => {
   SENSORS.forEach((sensor) => {
     setInterval(() => {
       const value = generateValueForSensor(sensor);
-      client.publish(`hyped.${sensor.name}`, value);
-      console.log(`Published ${value} ${sensor.unit} to ${sensor.name}`);
+      client.publish(`hyped.${sensor.name}`, value, (err) => {
+        if (err) {
+          console.error("ERROR PUBLISHING", err);
+        } else {
+          console.log(`Published ${sensor.name} = ${value}`);
+        }
+      });
     }, sensor.update_interval);
   });
 });
